@@ -1,4 +1,7 @@
 .App {
+  max-width: 720px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
@@ -35,4 +38,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.form input,
+.form select {
+  padding: 6px;
+}
+
+button {
+  padding: 6px 10px;
+}
+
+.historial {
+  margin-top: 16px;
+}
+
+.historial ul {
+  list-style: none;
+  padding: 0;
+}
+
+.historial li {
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
 }
