@@ -12,7 +12,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Conexión a MongoDB
+# MongoDB
 mongo_client = MongoClient("mongodb://admin_user:web3@mongo:27017/")
 database = mongo_client["practica1"]
 collection_historial = database["historial"]
@@ -35,62 +35,6 @@ def sumar(a: float, b: float):
 
     return {"a": a, "b": b, "resultado": resultado}
 
-# @app.get("/calculadora/resta")
-# def restar(a: float, b: float):
-#     """
-#     Resta dos números que vienen como parámetros de query (?a=...&b=...)
-#     Ejemplo: /calculadora/resta?a=5&b=10
-#     """
-#     resultado = a - b
-#     document = {
-#         "resultado": resultado,
-#         "a": a,
-#         "b": b,
-#         "operacion": "resta",
-#         "date": datetime.datetime.now(tz=datetime.timezone.utc),
-#     }
-#     collection_historial.insert_one(document)
-
-#     return {"a": a, "b": b, "resultado": resultado}
-
-# @app.get("/calculadora/mult")
-# def multiplicar(a: float, b: float):
-#     """
-#     Multiplica dos números que vienen como parámetros de query (?a=...&b=...)
-#     Ejemplo: /calculadora/mult?a=5&b=10
-#     """
-#     resultado = a * b
-#     document = {
-#         "resultado": resultado,
-#         "a": a,
-#         "b": b,
-#         "operacion": "multiplicacion",
-#         "date": datetime.datetime.now(tz=datetime.timezone.utc),
-#     }
-#     collection_historial.insert_one(document)
-
-#     return {"a": a, "b": b, "resultado": resultado}
-
-# @app.get("/calculadora/div")
-# def multiplicar(a: float, b: float):
-#     """
-#     Divide dos números que vienen como parámetros de query (?a=...&b=...)
-#     Ejemplo: /calculadora/resta?a=5&b=10
-#     """
-#     resultado = "indefinido"
-#     if(b != 0):
-#         resultado = a / b
-    
-#     document = {
-#         "resultado": resultado,
-#         "a": a,
-#         "b": b,
-#         "operacion": "division",
-#         "date": datetime.datetime.now(tz=datetime.timezone.utc),
-#     }
-#     collection_historial.insert_one(document)
-
-#     return {"a": a, "b": b, "resultado": resultado}
 
 
 @app.get("/calculadora/historial")
